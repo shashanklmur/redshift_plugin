@@ -150,7 +150,7 @@ class S3ToRedshiftOperator(BaseOperator):
         letters = string.ascii_lowercase
         random_string = ''.join(random.choice(letters) for _ in range(7))
         self.temp_suffix = '_tmp_{0}'.format(random_string)
-
+        schema = []
         if self.origin_schema:
             schema = self.read_and_format()
 
